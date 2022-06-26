@@ -1,16 +1,49 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("./../public/fonts/Gilroy-FREE/Gilroy-Light.otf");
+  font-weight: 400;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@font-face {
+  font-family: "Gilroy Bold";
+  src: url("./../public/fonts/Gilroy-FREE/Gilroy-ExtraBold.otf");
+  font-weight: 900;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Gilroy", sans-serif;
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+}
+
+.title::before {
+  position: absolute;
+  content: attr(data-sr-id);
+  font-family: "Gilroy Bold";
+  font-weight: 700;
+  font-size: 10rem;
+  color: rgba(255, 255, 255, 0.308);
+  top: -90%;
+  left: -30%;
 }
